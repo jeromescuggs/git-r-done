@@ -10,18 +10,28 @@ This is a stupid-simple script that does one simple thing: it replicates the sin
 
 ## usage
 I like to set up a local bin folder in $HOME: 
+
 `$ cd ~`
 `$ mkdir .jrmbin`
 
 Make it executable:
+
 `$ echo export PATH="$PATH:/home/$USER/.jrmbin" >> $HOME/.zshrc`
 
 Copy this over: 
+
 `$ cp gits/git-r-done/jrmgit.sh $HOME/.jrmbin/jrmgit`
 
 Restart your shell, and voila. 
+
 `$ exec zsh`
 `$ jrmgit jeromescuggs/git-r-done`
+
+It also handles targets: 
+
+`$ jrmgit jeromescuggs/git-r-done foo`
+
+will copy `git-r-done` to a new directory `foo`.
 
 In the above examples, I use `.jrmbin` as my folder, but obviously you can use anything and adjust the commands accordingly. I also use ZSH, so for bash you would add the `export` command to your `.bashrc` folder, etc. 
 
